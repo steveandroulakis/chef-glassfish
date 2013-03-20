@@ -11,10 +11,10 @@ stop on runlevel [!2345]
 # Increase default timeout before killing (on stop) to 10 seconds
 kill timeout 50
 
-setuid <%= node['glassfish']['user'] %>
-setgid <%= node['glassfish']['group'] %>
-respawn limit 15 5
-kill signal HUP
+#<!-- setuid <%= node['glassfish']['user'] %>
+#setgid <%= node['glassfish']['group'] %>
+#respawn limit 15 5
+#kill signal HUP -->
 umask 0077
 
 <% config_dir = "#{node['glassfish']['domains_dir']}/#{@resource.domain_name}/config" %>
